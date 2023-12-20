@@ -1,0 +1,13 @@
+version: '3' 
+services: 
+  mosquitto: 
+    container_name: mosquitto
+    image: eclipse-mosquitto:latest 
+    volumes: 
+      - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./config/acl_file:/mosquitto/config/acl_file:ro
+      - ./config/password_file:/mosquitto/config/password_file:rw
+      - ./certs:/mosquitto/config/certs 
+    ports: 
+      - 1883:1883  
+      - 8883:8883

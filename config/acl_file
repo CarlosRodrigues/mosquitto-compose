@@ -1,0 +1,16 @@
+#anonymous access
+topic readwrite /health_status
+
+
+#user based access
+
+user temperature_sensor
+topic write /temperature
+
+user temperature_controller
+topic read  /temperature
+
+user read_all
+topic read /#
+
+
